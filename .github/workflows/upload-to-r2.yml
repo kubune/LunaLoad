@@ -20,7 +20,9 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.R2_SECRET_ACCESS_KEY }}
           aws configure set region auto
           aws configure set output json
+          aws configure set retry_mode standard
+          aws configure set max_attempts 10
 
       - name: Upload Files to Cloudflare R2
         run: |
-          aws s3 sync ./Mods s3://${{ secrets.R2_BUCKET_NAME }}/ --endpoint-url=${{ secrets.R2_ENDPOINT }} --no-verify-ssl
+          aws s3 sync ./Mods s3://${{ secrets.R2_BUCKET_NAME }}/ --endpoint-url=${{ secrets.R2_ENDPOINT }} --no-verify-ssl --max-bandwidth 5MB/s
