@@ -23,4 +23,4 @@ jobs:
 
       - name: Upload Files to Cloudflare R2
         run: |
-          aws s3 sync ./mods s3://${{ secrets.R2_BUCKET_NAME }}/ --endpoint-url=${{ secrets.R2_ENDPOINT }}
+          aws s3 sync ./Mods s3://${{ secrets.R2_BUCKET_NAME }}/ --endpoint-url=${{ secrets.R2_ENDPOINT }}
