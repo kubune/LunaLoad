@@ -1,0 +1,10 @@
+{
+    "name": "Visual Chromatic Name",
+    "version": "1.0.0",
+    "description": "Changes your name to be visually chromatic animated.",
+    "authors": [
+    "kubune"
+    ],
+    "updateLink": "",
+    "icon": "icon.png"
+}
