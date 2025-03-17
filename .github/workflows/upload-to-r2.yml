@@ -1,0 +1,29 @@
+name: Upload Mods to Cloudflare R2
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt update
+          sudo apt install -y awscli
+
+      - name: Configure AWS CLI for Cloudflare R2
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.R2_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          aws configure set region auto
+          aws configure set output json
+
+      - name: Upload Files to Cloudflare R2
+        run: |
+          aws s3 sync ./mods s3://${{ secrets.R2_BUCKET_NAME }}/ --endpoint-url=${{ secrets.R2_ENDPOINT }}
