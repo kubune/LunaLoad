@@ -23,7 +23,7 @@ const Utils = {
     }
 }
 
-let newStrings = FormatJSONString(readFile(`${modsFolder}/FuckedTIDs/strings.json`, "r"));
+let newStrings = JSON.parse(readFile(`${modsFolder}/FuckedTIDs/strings.json`, "r"));
 
 let pool, counter = 0;
 const newPool = function() { pool = Math.floor(Math.random(0, newStrings.length)*newStrings.length) }
