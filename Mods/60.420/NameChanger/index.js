@@ -1,7 +1,7 @@
-const base = Module.getBaseAddress("libg.so");
-const modsFolder = "/data/local/tmp/mods";
-let newStrings = JSON.parse(readFile(`${modsFolder}/NameChanger/strings.json`, "r"));
-const newNamePtr = Memory.allocUtf8String(newStrings.name);
-Interceptor.replace(base.add(0x8F8B08), new NativeCallback(function() {
-    return newNamePtr;
-}, 'pointer', []));
+const base = Process.findModuleByName("libg.so").base;
+const nameFunc = base.add(0x34C250);
+const customName = "CustomName!!!";
+const nameBuf = Memory.allocUtf8String(customName);
+Interceptor.replace(nameFunc, new NativeCallback(function(arg0) {
+    return nameBuf;
+}, 'pointer', ['pointer']));
