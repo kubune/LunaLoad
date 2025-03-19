@@ -1,0 +1,10 @@
+{
+    "name": "Custom Tips",
+    "version": "1.0.0",
+    "description": "Adds the ability to add custom tips to the game!",
+    "authors": [
+        "kubune"
+    ],
+    "updateLink": "",
+    "icon": "modIcon.png"
+}
