@@ -13,6 +13,6 @@ LunaLoad is still work in progress (wip). New info soon.
 - Texture packs (later)
 
 # Discord Server
-Link: (soon)
+Link: https://discord.gg/g9UmjMsXYZ
 
 ### Estimated release date: late April 2025
