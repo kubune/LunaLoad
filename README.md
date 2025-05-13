@@ -15,4 +15,4 @@ LunaLoad is still work in progress (wip). New info soon.
 # Discord Server
 Link: https://discord.gg/g9UmjMsXYZ
 
-### Estimated release date: early May 2025
+### Estimated release date: TBA
