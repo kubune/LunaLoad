@@ -1,5 +1,6 @@
 # LunaLoad
 LunaLoad is a Brawl Stars Mod Loader like Minecraft Fabric or Geometry Dash Geode. 
+Mod was made thanks to Frida (https://frida.re/)
 
 # Contributing
 You will be able to create mods (and make pull requests) AFTER LunaLoad will be released.
